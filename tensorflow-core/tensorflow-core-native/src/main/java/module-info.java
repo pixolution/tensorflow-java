@@ -22,6 +22,7 @@ module tensorflow.runtime {
   exports org.tensorflow.exceptions;
   exports org.tensorflow.internal.c_api;
   exports org.tensorflow.internal.c_api.global;
+  exports org.tensorflow.internal.c_api.presets;
   exports org.tensorflow.proto;
   exports org.tensorflow.proto.data;
   exports org.tensorflow.proto.data.model;

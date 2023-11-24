@@ -178,7 +178,7 @@
             </goals>
             <configuration>
               <skip>${dist.download.skip}</skip> <!-- skipped when full native build is enabled -->
-              <executable>/bin/bash</executable>
+              <executable>bash</executable>
               <arguments>
                 <argument>scripts/dist_download.sh</argument>
                 <argument>${dist.download.folder}</argument>
@@ -216,6 +216,7 @@
           <includePaths>
             <includePath>${project.basedir}/</includePath>
             <includePath>${dist.download.folder}/tensorflow/include/</includePath>
+            <includePath>${dist.download.folder}/include/</includePath> <!-- it's a different path on windows -->
             <includePath>${project.basedir}/target/classes/org/tensorflow/internal/c_api/include/</includePath>
             <!-- additional include paths in case of a full native build -->
             <includePath>${project.basedir}/bazel-${project.artifactId}/external/org_tensorflow/</includePath>
@@ -403,6 +404,18 @@
               <!-- Build on Java8 to prevent the plugin to automatically include module-info.java (excluding it won't work) -->
               <release>8</release>
               <compilerArgs combine.self="override"/>
+            </configuration>
+          </execution>
+          <execution>
+            <!--
+            Regular compile to make things happy with modules.
+            -->
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <release>11</release>
             </configuration>
           </execution>
         </executions>

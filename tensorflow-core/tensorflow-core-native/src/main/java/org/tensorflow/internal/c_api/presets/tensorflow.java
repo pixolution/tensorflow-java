@@ -44,9 +44,9 @@ import java.util.List;
           value = {"linux", "macosx", "windows"},
           compiler = "cpp11",
           include = {
-            "tensorflow/tsl/platform/ctstring_internal.h",
-            "tensorflow/tsl/platform/ctstring.h",
-            "tensorflow/tsl/c/tsl_status.h",
+            //"tensorflow/tsl/platform/ctstring_internal.h",
+            //"tensorflow/tsl/platform/ctstring.h",
+            //"tensorflow/tsl/c/tsl_status.h",
             "tensorflow/c/c_api_macros.h",
             "tensorflow/c/tf_datatype.h",
             "tensorflow/c/tf_status.h",
@@ -134,17 +134,9 @@ import java.util.List;
             "vcomp140",
             "msvcr120",
             "libiomp5md",
-            "mklml",
-            "tensorflow_framework"
+            "mklml"
           },
-          link = {"tensorflow_cc@.2"}),
-      @Platform(
-          value = "windows-x86",
-          preloadpath = {
-            "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/redist/x86/Microsoft.VC140.CRT/",
-            "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/redist/x86/Microsoft.VC140.OpenMP/",
-            "C:/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x86/"
-          }),
+          link = {"tensorflow"}),
       @Platform(
           value = "windows-x86_64",
           preloadpath = {
@@ -160,6 +152,8 @@ import java.util.List;
     global = "org.tensorflow.internal.c_api.global.tensorflow")
 @NoException
 public class tensorflow implements LoadEnabled, InfoMapper {
+
+  public tensorflow() {}
 
   @Override
   public void map(InfoMap infoMap) {
