@@ -2,13 +2,13 @@
 set -e
 
 DOWNLOAD_FOLDER="$1"
-echo "YOYOYO" 
+echo "YOYOYO"
 case ${PLATFORM:-} in
   'linux-x86_64')
     WHEEL_URL='https://files.pythonhosted.org/packages/9b/0b/c18d6464a19d4c9b63df8880dd3ce0c67b5145ada9092f3ac67d82726566/tensorflow_cpu-2.16.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl'
     ;;
   'linux-arm64')
-    WHEEL_URL='https://files.pythonhosted.org/packages/d7/60/57ebc05d0c4ef83db1f15fafae76e36f8ba4853628fe5a3eb0901f2e8121/tensorflow_aarch64-2.16.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl'
+    WHEEL_URL='https://files.pythonhosted.org/packages/8a/80/f87c8325dd42787f5cb9e546a5683857974e48786f5ac6104c56c02b9989/tensorflow-2.16.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl'
     ;;
   'linux-x86_64-gpu')
     WHEEL_URL='https://files.pythonhosted.org/packages/58/70/e8ac764ec80810eefcbab0cb1d21dbba6cf26719c44cd6d9a5e9f0407935/tensorflow-2.16.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl'
